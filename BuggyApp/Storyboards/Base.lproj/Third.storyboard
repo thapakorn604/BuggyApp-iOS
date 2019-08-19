@@ -114,11 +114,11 @@
             </objects>
             <point key="canvasLocation" x="2573.913043478261" y="1018.5267857142857"/>
         </scene>
-        <!--Third-->
+        <!--Profile-->
         <scene sceneID="oyB-S5-CR8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8Su-Lu-zS9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Third" image="first" id="hjw-IW-tD5"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="icons8-contact_card_filled" id="hjw-IW-tD5"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="b3f-QA-lzv">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -135,6 +135,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
+        <image name="icons8-contact_card_filled" width="25" height="25"/>
     </resources>
 </document>
