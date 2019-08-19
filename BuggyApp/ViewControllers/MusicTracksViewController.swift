@@ -23,6 +23,9 @@ class MusicTracksViewController: UIViewController {
     // Do any additional setup after loading the view.
     tableView.estimatedRowHeight = CGFloat(140.0)
     
+    tableView.dataSource = self
+    tableView.delegate = self
+    
     APIManager.shared.getArtistInfo(artistName: "taylorswift") { [weak self] result in
       switch result {
       case .success(let tracks):
@@ -66,6 +69,13 @@ extension MusicTracksViewController: UITableViewDelegate {
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    tableView.deselectRow(at: indexPath, animated: true)
+    let track: Track = tracks[indexPath.item]
+    
+    let vc = self.storyboard?.instantiateViewController(withIdentifier: "trackDetail") as! MusicTrackDetailViewController
+    vc.track = track
+    
+    navigationController?.pushViewController(vc, animated: true)
+    
+    //tableView.deselectRow(at: indexPath, animated: true)
   }
 }

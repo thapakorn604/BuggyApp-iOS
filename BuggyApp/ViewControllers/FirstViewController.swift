@@ -42,8 +42,11 @@ extension FirstViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "CountryCell", for: indexPath) as! CurrencyCell
     if let country = countries?[indexPath.row] {
+        
+        let capital = country.capital == "" ? "-" : country.capital
+        
       cell.nameLabel.text = country.name
-      cell.capitalLabel.text = "Capital: \(country.capital)"
+        cell.capitalLabel.text = "Capital: \(capital)"
       cell.flagImageView.kf.setImage(with: URL(string: "https://www.countryflags.io/\(country.alpha2Code)/flat/64.png"))
     }
     return cell
